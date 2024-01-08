@@ -24,20 +24,21 @@ form.addEventListener("submit", function (event) {
     const state = document.querySelector('input[name="state"]:checked')?.value;
 
     promiseGenerator(delay, state)
-        .then((result) => {
+        .then(() => {
         iziToast.success({
         messageColor: "#FFF", 
         position: "topRight",
         backgroundColor: "#59A10D",
-        message: `✅ Fulfilled promise in ${result}ms`
+        message: `✅ Fulfilled promise in ${delay}ms`
       });
     })
-        .catch((error) => {
+      .catch(() => {
         iziToast.error({
         messageColor: "#FFF",  
         position: "topRight",
         backgroundColor: "#EF4040",
-        message: `❌ Rejected promise in ${error}ms`
+        message: `❌ Rejected promise in ${delay}ms`
       });
-    });
+      });
+  form.reset();
 });
