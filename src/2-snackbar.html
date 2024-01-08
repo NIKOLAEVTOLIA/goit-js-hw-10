@@ -11,7 +11,38 @@
     <section>
       <a href="./index.html">Go to home</a>
     </section>
-    <section></section>
+    <section>
+      <form class="form">
+        <label>
+          Delay (ms)
+          <input class="form-input-delay" type="number" name="delay" required />
+        </label>
+        <fieldset>
+          <legend>State</legend>
+          <label>
+            <input
+              class="form-input-state"
+              type="radio"
+              name="state"
+              value="fulfilled"
+              required
+            />
+            Fulfilled
+          </label>
+          <label>
+            <input
+              class="form-input-state"
+              type="radio"
+              name="state"
+              value="rejected"
+              required
+            />
+            Rejected
+          </label>
+        </fieldset>
+        <button type="submit">Create notification</button>
+      </form>
+    </section>
     <script type="module" src="./js/2-snackbar.js"></script>
   </body>
 </html>
